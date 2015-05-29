@@ -9,7 +9,7 @@
     <link rel="icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAACf0lEQVRYhe2XMWgUURCGvz8cIRySIohIlCBiJbkU5rASC0khIhZBLKzugYWlhQSxshCrYG0hvK1SSKoQgkUQCcFCNiJBRA6RIEEkhHAc4ViW5cZiN7LEPS8XMFeYgQe7O7Mz3+6b9+9bmZnoow30s/gxAIAmJyfPAC+Amz3euwjcr1Qqp4H3dH6YXTP7IGkRmPfeb+SdJTNrA7HUWy+aWSKpDbSBCNgB6mYW5+MkTUi6DFwCqs65R3mIUkHuFWD1AAxfgFbu/I2ZzUpq7ou7AkwAd8xsWlIzg9jpBLBsZs+7VZfUDsMwcs4BYGYtSZve+0Y+zjn3ClgCViXNAreAt8BcJ4D22tpaq+B6N6DCHvDeJ0ADWHTOJcACcNs5t+y93zrSVeC9fw18Ai5moy/LcAk4C4z1BcDMVoBB4JxzbqioB8rVavV8lzwRsB2GYdwlrsh+AE1gFCgEqAHXuyT5DDwF6r1Wl5SYWVPSCDBYBDCajb9ZApR7LQ6/BWyXdPoHigASoNurjUgVsGfL1DPOYAp14EkYhs8Ok/yAVjKzE5KQ1JdlWJI0TCrjST8AysAwsAXE/dCBcWAI2ARaRT3wT03SDTPbAr4FQXC0U+CcGwOuSfoqqQ5HKMXOuRHgIWkPvDOzDSj+HJer1erJA+RMgGalUtk7L9SFWq02JGkMeADcBb4Dc0EQRJ0AHmejm9VJNxcAmNkFSdPOud18kKR7wDhwysx+Sprx3q/v+UvZXvAwzTiQFUZSSdIUMFUQF5tZQ9IK8NJ7v5B37hWOSeW1F4v2HXeS5o9Z8Xlgfb+zZGbbkmaAXuU3Ip1PgKt0bugm6ZasEQTBH5A6/jf87wF+Ac3/6Jj1j+FcAAAAAElFTkSuQmCC" type="image/x-icon">
     <link rel="shortcut icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAACf0lEQVRYhe2XMWgUURCGvz8cIRySIohIlCBiJbkU5rASC0khIhZBLKzugYWlhQSxshCrYG0hvK1SSKoQgkUQCcFCNiJBRA6RIEEkhHAc4ViW5cZiN7LEPS8XMFeYgQe7O7Mz3+6b9+9bmZnoow30s/gxAIAmJyfPAC+Amz3euwjcr1Qqp4H3dH6YXTP7IGkRmPfeb+SdJTNrA7HUWy+aWSKpDbSBCNgB6mYW5+MkTUi6DFwCqs65R3mIUkHuFWD1AAxfgFbu/I2ZzUpq7ou7AkwAd8xsWlIzg9jpBLBsZs+7VZfUDsMwcs4BYGYtSZve+0Y+zjn3ClgCViXNAreAt8BcJ4D22tpaq+B6N6DCHvDeJ0ADWHTOJcACcNs5t+y93zrSVeC9fw18Ai5moy/LcAk4C4z1BcDMVoBB4JxzbqioB8rVavV8lzwRsB2GYdwlrsh+AE1gFCgEqAHXuyT5DDwF6r1Wl5SYWVPSCDBYBDCajb9ZApR7LQ6/BWyXdPoHigASoNurjUgVsGfL1DPOYAp14EkYhs8Ok/yAVjKzE5KQ1JdlWJI0TCrjST8AysAwsAXE/dCBcWAI2ARaRT3wT03SDTPbAr4FQXC0U+CcGwOuSfoqqQ5HKMXOuRHgIWkPvDOzDSj+HJer1erJA+RMgGalUtk7L9SFWq02JGkMeADcBb4Dc0EQRJ0AHmejm9VJNxcAmNkFSdPOud18kKR7wDhwysx+Sprx3q/v+UvZXvAwzTiQFUZSSdIUMFUQF5tZQ9IK8NJ7v5B37hWOSeW1F4v2HXeS5o9Z8Xlgfb+zZGbbkmaAXuU3Ip1PgKt0bugm6ZasEQTBH5A6/jf87wF+Ac3/6Jj1j+FcAAAAAElFTkSuQmCC" type="image/x-icon">
     <title>EntityDecode - HTML Entity Decoder</title>
-    <link rel="stylesheet" type="text/css" href="http://entitydecode.com/css/style.css">
+    <link rel="stylesheet" type="text/css" href="http://entitydecode.com/assets/css/style.css">
 </head>
 <body ng-app>
     <div class="container">
@@ -79,6 +79,6 @@
         </div>
       </div>
   </div>
-  <script async defer type="text/javascript" src="http://entitydecode.com/js/scripts.js"></script>
+  <script async defer type="text/javascript" src="http://entitydecode.com/assets/js/scripts.js"></script>
 </body>
 </html>
