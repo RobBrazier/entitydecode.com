@@ -5,7 +5,8 @@
   "main": "src/index.js",
   "scripts": {
     "dev": "bnr -s dev",
-    "build": "bnr -s build"
+    "build": "bnr -s build",
+    "now-build": "npm run build"
   },
   "betterScripts": {
     "dev": {
