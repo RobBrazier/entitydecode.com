@@ -12,6 +12,7 @@ blocks:
       jobs:
         - name: 'Deploy to now.sh'
           commands:
+            - cache restore entitydecode-$SEMAPHORE_GIT_SHA-$SEMAPHORE_GIT_BRANCH dist
             - npm install -g now
             - now --prod dist
   - name: Purge Cache
