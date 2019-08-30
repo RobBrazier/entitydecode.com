@@ -15,13 +15,16 @@ blocks:
       - name: NPM Build
         commands:
           - checkout
+          - cache restore
           - npm install
+          - cache store
           - npm run build
+          - cache store entitydecode-$SEMAPHORE_GIT_SHA-$SEMAPHORE_GIT_BRANCH dist
 
-  - name: "Push Image"
-    task:
-      jobs:
-      - name: Push
-        commands:
-          - checkout
-          - echo "make docker.push"
+promotions:
+  - name: Deploy
+    pipeline_file: deploy.yml
+    auto_promote_on:
+      - result: passed
+        branch:
+          - master

@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "name": "entitydecode.com",
+  "alias": ["entitydecode"],
+  "routes": [
+    { "src": "/(.*)", "dest": "/$1" },
+    { "handle": "filesystem" },
+    { "src": "/.*", "status": 404, "dest": "/index.html" }
+  ]
+}
