@@ -1,5 +1,4 @@
 version: v1.0
-name: Deploy to develop
 agent:
   machine:
     type: e1-standard-2
@@ -15,11 +14,11 @@ blocks:
             - cache restore entitydecode-$SEMAPHORE_GIT_SHA-$SEMAPHORE_GIT_BRANCH
             - npm install -g now
             - now --prod dist
-  - name: Purge Cache
-    task:
-      secrets:
-        - name: bunnycdn-api-key
-      jobs:
-        - name: 'Purge BunnyCDN Pull Zone Cache'
-          commands:
-            - 'curl -X POST -H "AccessKey: $BUNNY_API_KEY" -H "Content-Length: 0" "https://bunnycdn.com/api/pullzone/54156/purgeCache"'
+#  - name: Purge Cache
+#    task:
+#      secrets:
+#        - name: bunnycdn-api-key
+#      jobs:
+#        - name: 'Purge BunnyCDN Pull Zone Cache'
+#          commands:
+#            - 'curl -X POST -H "AccessKey: $BUNNY_API_KEY" -H "Content-Length: 0" "https://bunnycdn.com/api/pullzone/54156/purgeCache"'
