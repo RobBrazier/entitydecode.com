@@ -22,6 +22,9 @@
 
 <style global lang="scss">
   @import 'milligram/src/Color';
+
+  $color-primary: #3273dc;
+
   @import 'milligram/src/Base';
   @import 'milligram/src/Typography';
   @import 'milligram/src/Grid';
@@ -33,8 +36,6 @@
   body {
     padding-top: 2rem;
   }
-
-  $color-primary: #3273dc;
 
   .has-text-centered {
     text-align: center;
