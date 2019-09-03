@@ -1,7 +1,7 @@
 <div>
   <section class="section">
     <div class="container">
-      <h1 class="title has-text-centered"><strong>Entity</strong>Decode</h1>
+      <h2 class="title has-text-centered"><strong>Entity</strong>Decode</h2>
       <About />
       <div id="options" class="row has-text-centered">
         <label class="column">

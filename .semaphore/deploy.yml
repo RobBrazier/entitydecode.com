@@ -13,4 +13,4 @@ blocks:
           commands:
             - cache restore entitydecode-$SEMAPHORE_GIT_SHA-$SEMAPHORE_GIT_BRANCH
             - npm install -g now
-            - now public
+            - now --prod public
