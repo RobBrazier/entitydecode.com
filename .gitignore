@@ -1,3 +1,6 @@
 node_modules
 .idea/
 dist/
+public/*.css
+public/*.map
+public/*.js
