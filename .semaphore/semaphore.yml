@@ -1,5 +1,4 @@
 version: v1.0
-name: First pipeline example
 agent:
   machine:
     type: e1-standard-2
@@ -19,7 +18,7 @@ blocks:
           - npm install
           - cache store
           - npm run build
-          - cache store entitydecode-$SEMAPHORE_GIT_SHA-$SEMAPHORE_GIT_BRANCH dist
+          - cache store entitydecode-$SEMAPHORE_GIT_SHA-$SEMAPHORE_GIT_BRANCH public
 
 promotions:
   - name: Deploy
