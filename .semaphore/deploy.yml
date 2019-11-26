@@ -7,15 +7,9 @@ blocks:
   - name: Deploy
     task:
       secrets:
-        - name: now.sh-deploy-token
         - name: netlify-entitydecode
         - name: netlify-authentication
       jobs:
-        - name: 'Deploy to now.sh'
-          commands:
-            - cache restore entitydecode-$SEMAPHORE_GIT_SHA-$SEMAPHORE_GIT_BRANCH
-            - npm install -g now
-            - now --prod public
         - name: 'Deploy to Netlify'
           commands:
             - npm install -g netlify-cli
