@@ -4,3 +4,5 @@ dist/
 public/*.css
 public/*.map
 public/*.js
+# Local Netlify folder
+.netlify
