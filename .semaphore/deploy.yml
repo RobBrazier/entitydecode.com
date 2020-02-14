@@ -7,19 +7,12 @@ blocks:
   - name: Deploy
     task:
       secrets:
-        - name: netlify-entitydecode
-        - name: netlify-authentication
         - name: linode-s3cfg
         - name: bunnycdn-api-key
       env_vars:
         - name: BUCKET_NAME
           value: entitydecode.com
       jobs:
-        - name: 'Deploy to Netlify'
-          commands:
-            - npm install -g netlify-cli
-            - cache restore entitydecode-$SEMAPHORE_GIT_SHA-$SEMAPHORE_GIT_BRANCH
-            - netlify deploy --dir=public --prod
         - name: 'Deploy to Linode'
           commands:
             - sudo apt -y install s3cmd
