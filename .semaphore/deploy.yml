@@ -7,13 +7,13 @@ blocks:
   - name: Deploy
     task:
       secrets:
-        - name: linode-s3cfg
+        - name: aws-frankfurt-s3cfg
         - name: bunnycdn-api-key
       env_vars:
         - name: BUCKET_NAME
           value: entitydecode.com
       jobs:
-        - name: 'Deploy to Linode'
+        - name: 'Deploy to AWS'
           commands:
             - sudo apt -y install s3cmd
             - cache restore entitydecode-$SEMAPHORE_GIT_SHA-$SEMAPHORE_GIT_BRANCH
