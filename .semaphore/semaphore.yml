@@ -13,6 +13,7 @@ blocks:
       jobs:
       - name: NPM Build
         commands:
+          - sem-version node 12.16.0
           - checkout
           - cache restore
           - npm install
