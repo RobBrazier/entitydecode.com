@@ -22,7 +22,7 @@
     "rollup-plugin-node-resolve": "^5.2.0",
     "rollup-plugin-svelte": "^5.2.3",
     "rollup-plugin-terser": "^6.1.0",
-    "sass": "^1.26.8",
+    "sass": "^1.26.9",
     "sirv-cli": "^1.0.0",
     "svelte": "^3.23.2",
     "svelte-preprocess": "^3.9.8"
