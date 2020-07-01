@@ -29,6 +29,6 @@
   },
   "dependencies": {
     "he": "^1.2.0",
-    "milligram": "^1.4.0"
+    "milligram": "^1.4.1"
   }
 }
