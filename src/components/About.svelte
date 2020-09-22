@@ -1,6 +1,6 @@
 <div id="about">
   <div class="column has-text-centered">
-    <button class:is-active={active} class="button-about" on:click={toggle}>About</button>
+    <button class:is-active={active} class="button-about" style="border-radius: 0" on:click={toggle}>About</button>
   </div>
   {#if active}
     <div transition:slide id="about-contents">
