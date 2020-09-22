@@ -42,4 +42,8 @@ export function toggle() {
   .label.is-inline {
     display: inline;
   }
+
+  #about-contents {
+    padding-top: 10px;
+  }
 </style>
