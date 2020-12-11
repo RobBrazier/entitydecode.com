@@ -7,19 +7,13 @@ agent:
 blocks:
   - name: "Build"
     task:
-      env_vars:
-        - name: APP_ENV
-          value: prod
       jobs:
-      - name: NPM Build
+      - name: Hugo Build
         commands:
-          - sem-version node 12.16.0
           - checkout
-          - cache restore
           - npm install
-          - cache store
           - npm run build
-          - cache store entitydecode-$SEMAPHORE_GIT_SHA-$SEMAPHORE_GIT_BRANCH public
+          - cache store "${SEMAPHORE_PROJECT_ID}-${SEMAPHORE_WORKFLOW_ID}" public/
 
 promotions:
   - name: Deploy
@@ -27,4 +21,4 @@ promotions:
     auto_promote_on:
       - result: passed
         branch:
-          - master
+            - master
