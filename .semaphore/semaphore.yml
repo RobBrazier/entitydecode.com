@@ -8,7 +8,7 @@ blocks:
   - name: "Build"
     task:
       jobs:
-      - name: Hugo Build
+      - name: NPM Build
         commands:
           - checkout
           - npm install
