@@ -1,0 +1,16 @@
+pull_request_rules:
+  - name: Dependabot automatic merge
+    conditions:
+      - "author=dependabot[bot]"
+      - "check-success=ci/semaphoreci/pr: Pipeline"
+    actions:
+      merge:
+        method: rebase
+  - name: Dependabot request reviews
+    conditions:
+      - "author=dependabot[bot]"
+      - "#check-failure>=1"
+    actions:
+      request_reviews:
+        users:
+          - RobBrazier
