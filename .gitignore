@@ -1,8 +1,5 @@
+.DS_Store
 node_modules
-.idea/
-dist/
-public/*.css
-public/*.map
-public/*.js
-# Local Netlify folder
-.netlify
+/build
+/.svelte-kit
+/package
