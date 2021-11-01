@@ -15,7 +15,7 @@
 		"url": "https://github.com/RobBrazier/entitydecode.com"
 	},
 	"devDependencies": {
-		"@sveltejs/adapter-cloudflare-workers": "^1.0.0-next.23",
+		"@sveltejs/adapter-cloudflare-workers": "^1.0.0-next.25",
 		"@sveltejs/adapter-static": "^1.0.0-next.20",
 		"@sveltejs/kit": "^1.0.0-next.192",
 		"@types/cookie": "^0.4.1",
