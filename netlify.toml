@@ -34,12 +34,12 @@
         d33wubrfki0l68.cloudfront.net
     ;
     img-src 'self' 
-        chicken.entitydecode.com
+        active-honest.entitydecode.com
         d33wubrfki0l68.cloudfront.net
     ; 
     script-src 'self' 
         'unsafe-inline'
-        chicken.entitydecode.com
+        active-honest.entitydecode.com
         d33wubrfki0l68.cloudfront.net
     ; 
     style-src 'self' 
