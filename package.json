@@ -26,7 +26,7 @@
     "solid-js": "^1.6.11",
     "solid-start": "^0.2.22",
     "solid-start-static": "^0.2.22",
-    "undici": "^5.15.1"
+    "undici": "^5.26.2"
   },
   "engines": {
     "node": ">=16.8"
