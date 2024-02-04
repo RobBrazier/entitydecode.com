@@ -153,8 +153,8 @@ export default function Home() {
               {" by "}
               <a href="https://robbrazier.com">Rob Brazier</a>
               {" |"} Source on{" "}
-              <a href="https://codeberg.org/RobBrazier/entitydecode.com">
-                Codeberg
+              <a href="https://github.com/RobBrazier/entitydecode.com">
+                GitHub
               </a>
             </p>
           </div>
