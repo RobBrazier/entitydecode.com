@@ -27,8 +27,6 @@
     "solid-start": "^0.2.22",
     "solid-start-static": "^0.3.10",
     "undici": "^5.28.2"
-  },
-  "engines": {
-    "node": ">=16.8"
   }
 }
+
