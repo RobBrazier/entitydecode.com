@@ -1,9 +1,14 @@
-<button class="btn btn-ghost mx-auto" onclick="document.getElementById('about').classList.toggle('hidden')">About</button>
+<button
+  class="btn btn-ghost mx-auto"
+  onclick="document.getElementById('about').classList.toggle('hidden')"
+  >About</button
+>
 <div id="about" class="hidden space-y-2">
   <p>
     <strong>Entity</strong>Decode is a tool to change any escaped characters,
-    such as %24 in URLs, and HTML entities such as &amp;raquo; into their proper
-    characters (you can try both of those down below if you want!).
+    such as <code>%24</code> in URLs, and HTML entities such as <code
+      >&amp;raquo;</code
+    > into their proper characters (you can try both of those down below if you want!).
   </p>
   <p>
     You can use this to decode any HTML Entities, or URL Encodings, and make
@@ -15,7 +20,7 @@
   <p>
     It also works the other way, you can paste/type anything you want to convert
     into an HTML Entity into the <label for="decode" class="label inline link"
-    >Decoded</label
+      >Decoded</label
     > Textbox.
   </p>
   <p>
@@ -24,10 +29,12 @@
       target="_blank"
       class="link link-primary"
       href="https://en.wikipedia.org/wiki/Character_encodings_in_HTML#Character_references"
-    >HTML Entities</a
+      >HTML Entities</a
     >{" "}
-    and <a target="_blank" class="link link-primary" href="https://en.wikipedia.org/wiki/Percent-encoding"
-    >URL Encodings</a
+    and <a
+      target="_blank"
+      class="link link-primary"
+      href="https://en.wikipedia.org/wiki/Percent-encoding">URL Encodings</a
     >, click the respective links to view more information about them.
   </p>
 </div>
