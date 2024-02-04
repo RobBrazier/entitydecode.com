@@ -1,0 +1,17 @@
+---
+import Layout from "../layouts/Layout.astro";
+import About from "../components/About.astro";
+import Form from "../components/Form.tsx";
+---
+
+<Layout>
+  <main class="flex flex-col gap-4">
+    <header>
+      <h1 class="text-4xl font-bold text-center">
+        Entity<span class="font-light">Decode</span>
+      </h1>
+    </header>
+    <About />
+    <Form client:idle />
+  </main>
+</Layout>

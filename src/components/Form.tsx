@@ -1,6 +1,4 @@
-import { Title } from "@solidjs/meta";
-import About from "~/components/About";
-import Field from "~/components/Field";
+import Field from "./Field";
 
 import he from "he";
 import { createSignal, createMemo } from "solid-js";
@@ -99,12 +97,9 @@ export default function Home() {
   });
 
   return (
-    <main>
-      <About />
-      <Title>EntityDecode</Title>
-
-      <div id="options" class="row has-text-centered">
-        <label class="column">
+    <div class="flex flex-col">
+      <div id="options" class="flex flex-row justify-center gap-8">
+        <label>
           <input
             type="checkbox"
             onChange={() => (decodeHtml = !decodeHtml)}
@@ -113,8 +108,9 @@ export default function Home() {
           HTML Entity Encode/Decode
         </label>
         <label
-          class="column"
-          title="Currently only Decoding is supported as Encoding causes too many problems"
+          class="tooltip"
+          data-tip="Currently only Decoding is supported as Encoding causes too many problems"
+          aria-label="Currently only Decoding is supported as Encoding causes too many problems"
         >
           <input
             type="checkbox"
@@ -144,22 +140,6 @@ export default function Home() {
           setDecoded(value);
         }}
       />
-      <footer class="footer">
-        <div class="container">
-          <div class="content has-text-centered">
-            <p>
-              <strong>Entity</strong>
-              <span class="has-text-weight-light">Decode</span>
-              {" by "}
-              <a href="https://robbrazier.com">Rob Brazier</a>
-              {" |"} Source on{" "}
-              <a href="https://github.com/RobBrazier/entitydecode.com">
-                GitHub
-              </a>
-            </p>
-          </div>
-        </div>
-      </footer>
-    </main>
+    </div>
   );
 }
