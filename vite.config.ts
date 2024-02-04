@@ -1,10 +1,3 @@
-import solid from "solid-start/vite";
-import { defineConfig } from "vite";
-// @ts-ignore
-import staticAdapter from "solid-start-static";
+import { defineConfig } from "@solidjs/start/config";
 
-export default defineConfig({
-  plugins: [
-    solid({ prerenderRoutes: ['/'] , adapter: staticAdapter()})
-  ],
-});
+export default defineConfig({ start: { ssr: true } });

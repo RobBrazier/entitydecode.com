@@ -1,6 +1,6 @@
 import { A } from "@solidjs/router";
-import { Title } from "solid-start";
-import { HttpStatusCode } from "solid-start/server";
+import { Title } from "@solidjs/meta";
+import { HttpStatusCode } from "@solidjs/start";
 
 export default function NotFound() {
   return (
@@ -9,7 +9,9 @@ export default function NotFound() {
       <HttpStatusCode code={404} />
       <div class="has-text-centered">
         <h1>Not Found</h1>
-        <A class="button button-clear" href="/">&laquo; Back</A>
+        <A class="button button-clear" href="/">
+          &laquo; Back
+        </A>
       </div>
     </main>
   );

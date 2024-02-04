@@ -1,9 +1,9 @@
 {
   "name": "entitydecode.com",
   "scripts": {
-    "dev": "solid-start dev",
-    "build": "solid-start build",
-    "start": "solid-start start"
+    "dev": "vinxi dev",
+    "build": "vinxi build",
+    "start": "vinxi start"
   },
   "type": "module",
   "devDependencies": {
@@ -12,21 +12,19 @@
     "esbuild": "^0.14.54",
     "postcss": "^8.4.31",
     "sass": "^1.58.3",
-    "serve": "^14.2.0",
-    "solid-start-node": "^0.2.19",
     "solid-transition-group": "^0.0.13",
-    "typescript": "^5.3.3",
-    "vite": "^3.2.5"
+    "typescript": "^5.3.3"
   },
   "dependencies": {
-    "@solidjs/meta": "^0.28.7",
-    "@solidjs/router": "^0.7.0",
+    "@solidjs/meta": "^0.29.3",
+    "@solidjs/router": "^0.11.3",
+    "@solidjs/start": "^0.5.0",
     "he": "^1.2.0",
     "milligram": "^1.4.1",
-    "solid-js": "^1.6.11",
-    "solid-start": "^0.2.22",
-    "solid-start-static": "^0.3.10",
-    "undici": "^5.28.2"
+    "solid-js": "^1.8.12",
+    "vinxi": "^0.2.1"
+  },
+  "engines": {
+    "node": ">=18"
   }
 }
-
