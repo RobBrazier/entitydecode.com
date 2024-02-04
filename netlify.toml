@@ -10,10 +10,10 @@
   # the build. This is relative to the base directory if one has been set, or the
   # root directory if a base has not been set. This sample publishes the
   # directory located at the absolute path "root/project/build-output"
-  publish = "public/"
+  publish = "dist/public/"
 
   # Default build command.
-  command = "npm run build"
+  command = "pnpm build"
 
 [[plugins]]
   # Installs the Lighthouse Build Plugin for all deploy contexts
@@ -29,23 +29,22 @@
     X-Content-Type-Options = "nosniff"
     Referrer-Policy = "strict-origin-when-cross-origin"
     Content-Security-Policy = """
-    default-src 'none';
+    default-src 'self';
     font-src 'self'
         d33wubrfki0l68.cloudfront.net
     ;
     img-src 'self' 
-        active-honest.entitydecode.com
         d33wubrfki0l68.cloudfront.net
     ; 
     script-src 'self' 
         'unsafe-inline'
-        active-honest.entitydecode.com
         d33wubrfki0l68.cloudfront.net
+        plausible.io
     ; 
     style-src 'self' 
         'unsafe-inline'
-        d33wubrfki0l68.cloudfront.net
-    ; 
-    report-uri https://brzr.report-uri.com/r/d/csp/enforce
+    ;
+    connect-src 'self'
+        plausible.io
     ;
     """

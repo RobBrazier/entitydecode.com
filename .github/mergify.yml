@@ -2,7 +2,7 @@ pull_request_rules:
   - name: Dependabot automatic merge
     conditions:
       - "author=dependabot[bot]"
-      - "check-success=deploy/netlify"
+      - "check-success=deploy/vercel"
     actions:
       merge:
         method: rebase
