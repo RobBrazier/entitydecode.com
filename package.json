@@ -16,7 +16,7 @@
     "solid-start-node": "^0.2.19",
     "solid-transition-group": "^0.0.13",
     "typescript": "^4.9.4",
-    "vite": "^3.2.5"
+    "vite": "^3.2.8"
   },
   "dependencies": {
     "@solidjs/meta": "^0.28.2",
