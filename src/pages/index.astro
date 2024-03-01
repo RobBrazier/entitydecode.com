@@ -1,7 +1,7 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import About from "../components/About.astro";
-import Form from "../components/Form.tsx";
+import Form from "../components/Form.astro";
 ---
 
 <Layout>
@@ -12,6 +12,6 @@ import Form from "../components/Form.tsx";
       </h1>
     </header>
     <About />
-    <Form client:idle />
+    <Form />
   </main>
 </Layout>
