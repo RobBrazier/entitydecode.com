@@ -8,12 +8,23 @@
     />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>EntityDecode</title>
-    <script async data-api="/stats/api/event" src="/stats/js/script.js"
-    ></script>
+    <script
+      async
+      data-api="/stats/api/event"
+      is:inline
+      src="/stats/js/script.js"></script>
   </head>
   <body>
     <main class="max-w-screen-xl mx-auto p-4">
       <slot />
     </main>
+    <footer class="text-center text-sm p-4">
+      <p>
+        Source Code:
+        <a class="link" href="https://github.com/RobBrazier/entitydecode.com">
+          GitHub
+        </a>
+      </p>
+    </footer>
   </body>
 </html>
