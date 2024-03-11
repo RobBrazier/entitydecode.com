@@ -1,9 +1,5 @@
-<button
-  class="btn btn-ghost mx-auto"
-  onclick="document.getElementById('about').classList.toggle('hidden')"
-  >About</button
->
-<div id="about" class="hidden space-y-2">
+<button class="btn btn-ghost mx-auto block" @click="open = !open">About</button>
+<div class="space-y-2" x-transition x-cloak x-show="open">
   <p>
     <strong>Entity</strong>Decode is a tool to change any escaped characters,
     such as <code>%24</code> in URLs, and HTML entities such as <code
@@ -24,13 +20,13 @@
     > Textbox.
   </p>
   <p>
-    If you have no idea what I'm on about, with {" "}
+    If you have no idea what I'm on about, with
     <a
       target="_blank"
       class="link link-primary"
       href="https://en.wikipedia.org/wiki/Character_encodings_in_HTML#Character_references"
       >HTML Entities</a
-    >{" "}
+    >
     and <a
       target="_blank"
       class="link link-primary"

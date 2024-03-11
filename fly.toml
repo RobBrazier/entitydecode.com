@@ -1,0 +1,19 @@
+# fly.toml app configuration file generated for entitydecode-com on 2024-03-11T17:51:32Z
+#
+# See https://fly.io/docs/reference/configuration/ for information about how to use this file.
+#
+
+app = 'entitydecode-com'
+primary_region = 'iad'
+
+[http_service]
+internal_port = 80
+force_https = true
+auto_stop_machines = true
+auto_start_machines = true
+min_machines_running = 0
+processes = ['app']
+
+[[statics]]
+guest_path = "/app/_astro"
+url_prefix = "/_astro"
