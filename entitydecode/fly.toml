@@ -7,7 +7,7 @@ app = 'entitydecode-com'
 primary_region = 'iad'
 
 [http_service]
-internal_port = 80
+internal_port = 8080
 force_https = true
 auto_stop_machines = true
 auto_start_machines = true
@@ -22,9 +22,5 @@ timeout = "5s"
 path = "/"
 
 [[statics]]
-guest_path = "/app/_astro"
-url_prefix = "/_astro"
-
-[[statics]]
-guest_path = "/app/js"
-url_prefix = "/js"
+guest_path = "/app/assets"
+url_prefix = "/assets"

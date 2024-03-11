@@ -1,0 +1,40 @@
+package pages
+
+import "fmt"
+
+templ field(id string, label string, placeholder string, model string, effect string) {
+	<label for={ id } class="form-control w-full">
+		<div class="label font-bold">{ label }:</div>
+		<textarea
+			class="input input-bordered w-full min-h-52"
+			id={ id }
+			x-model={ model }
+			x-effect={ effect }
+			@focus={ fmt.Sprintf("focused = '%s'", id) }
+			placeholder={ placeholder }
+		></textarea>
+	</label>
+}
+
+templ Index() {
+	<main>
+		<div class="flex flex-col" x-data="data">
+			<div id="options" class="flex flex-row justify-center gap-8">
+				<label>
+					<input type="checkbox" x-model="htmlEncode"/>&nbsp;HTML Entity
+					Encode/Decode
+				</label>
+				<label
+					class="tooltip"
+					data-tip="Currently only Decoding is supported as Encoding causes too many problems"
+					aria-label="Currently only Decoding is supported as Encoding causes too many problems"
+				>
+					<input type="checkbox" x-model="urlDecode"/>&nbsp;URL Encoding
+					Decode (?)
+				</label>
+			</div>
+			@field("encode", "Encoded", "e.g. »", "encoded", "decode(encoded)")
+			@field("decode", "Decoded", "e.g. »", "decoded", "encode(decoded)")
+		</div>
+	</main>
+}

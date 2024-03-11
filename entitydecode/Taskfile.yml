@@ -1,0 +1,58 @@
+version: '3'
+
+tasks:
+  install:
+    cmds:
+      - go mod download
+
+  build:
+    cmds:
+      - go build -ldflags "-s -w" -o dist/main ./cmd/app/main.go
+
+  templ:
+    watch: true
+    cmds:
+      - templ generate
+    sources:
+      - internal/components/**/*.templ
+      - internal/pages/**/*.templ
+    generates:
+      - internal/components/**/*_templ.go
+      - internal/pages/**/*_templ.go
+
+  css:
+    watch: true
+    cmds:
+      - pnpm build:css
+    sources:
+      - internal/components/**/*.templ
+      - internal/pages/**/*.templ
+      - css/*
+    generates:
+      - dist/**/*.css
+
+  js:
+    watch: true
+    cmds:
+      - pnpm build:js
+    sources:
+      - js/*
+    generates:
+      - dist/**/*.js
+
+  run:
+    watch: true
+    deps: [css, js, templ]
+    dotenv:
+      - .env
+    cmds:
+      - lsof -ti:8080 -sTCP:LISTEN | xargs -r kill -15
+      - go run cmd/app/main.go || true
+    sources:
+      - internal/**/*.go
+    status:
+      - "false"
+
+  clean:
+    cmds:
+      - rm -rf dist
