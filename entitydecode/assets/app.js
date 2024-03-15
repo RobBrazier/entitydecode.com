@@ -1,9 +1,5 @@
 import Alpine from 'alpinejs';
 import he from "he";
-import Plausible from "plausible-tracker";
-const { trackPageview } = Plausible({
-    apiHost: `${window.location.protocol}//${window.location.host}`
-});
 
 /**
  * @typedef {(input: T) => T} Processor
@@ -58,4 +54,3 @@ Alpine.data("data", () => ({
     },
 }));
 Alpine.start();
-trackPageview();
