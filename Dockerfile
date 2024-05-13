@@ -28,11 +28,8 @@ RUN pnpm prune --prod
 
 
 # Final stage for app image
-FROM scratch
+FROM docker.io/pierrezemb/gostatic:latest
 
-COPY --from=docker.io/caddy:alpine /usr/bin/caddy /caddy
-COPY --from=build /app/dist /app
-COPY Caddyfile /Caddyfile
+COPY --from=build /app/dist /srv/http
 
-EXPOSE 80
-CMD [ "/caddy", "run", "-c", "/Caddyfile"]
+CMD ["-enable-health"]
