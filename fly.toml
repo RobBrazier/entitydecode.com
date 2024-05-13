@@ -19,7 +19,7 @@ grace_period = '1s'
 interval = '10s'
 method = 'GET'
 timeout = '1s'
-path = '/'
+path = '/health'
 
 [[statics]]
 guest_path = '/srv/http/_astro'
