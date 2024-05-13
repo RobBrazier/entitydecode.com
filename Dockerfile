@@ -32,4 +32,4 @@ FROM docker.io/pierrezemb/gostatic:latest
 
 COPY --from=build /app/dist /srv/http
 
-CMD ["-enable-health", "-enable-logging"]
+CMD ["-enable-health"]
