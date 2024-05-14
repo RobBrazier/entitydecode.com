@@ -2,7 +2,7 @@ app = 'entitydecode-com'
 primary_region = 'iad'
 
 [deploy]
-strategy = "bluegreen"
+strategy = "rolling"
 
 [http_service]
 internal_port = 8043
@@ -14,12 +14,12 @@ processes = ['app']
 [http_service.concurrency]
 hard_limit = 500
 soft_limit = 450
-[[http_service.checks]]
-grace_period = '1s'
-interval = '10s'
-method = 'GET'
-timeout = '1s'
-path = '/health'
+# [[http_service.checks]]
+# grace_period = '1s'
+# interval = '10s'
+# method = 'GET'
+# timeout = '1s'
+# path = '/health'
 
 [[statics]]
 guest_path = '/srv/http/_astro'
