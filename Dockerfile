@@ -25,6 +25,7 @@ RUN pnpm run build
 # Remove development dependencies
 RUN pnpm prune --prod
 
+RUN echo "E404:404.html" > dist/httpd.conf
 
 # Final stage for app image
 FROM docker.io/lipanski/docker-static-website:2.3.1
