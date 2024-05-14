@@ -9,7 +9,7 @@ internal_port = 8043
 force_https = true
 auto_stop_machines = true
 auto_start_machines = true
-min_machines_running = 1
+min_machines_running = 0
 processes = ['app']
 [http_service.concurrency]
 hard_limit = 500
