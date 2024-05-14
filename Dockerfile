@@ -1,5 +1,4 @@
 # syntax = docker/dockerfile:1
-
 FROM docker.io/node:lts-alpine as build
 
 LABEL fly_launch_runtime="Astro"
@@ -28,8 +27,6 @@ RUN pnpm prune --prod
 
 
 # Final stage for app image
-FROM docker.io/pierrezemb/gostatic:latest
+FROM docker.io/lipanski/docker-static-website:2.3.1
 
-COPY --from=build /app/dist /srv/http
-
-CMD ["-enable-logging"]
+COPY --from=build /app/dist .
