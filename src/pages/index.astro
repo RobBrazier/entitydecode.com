@@ -1,8 +1,27 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import Form from "../components/Form.astro";
+import Field from "../components/Field.svelte";
+import Options from "../components/Options.svelte";
+const encoded = "e.g. &raquo;";
+const decoded = "e.g. »";
 ---
 
 <Layout>
-  <Form />
+  <div class="flex flex-col">
+    <Options client:idle />
+    <Field
+      client:idle
+      id="encode"
+      target="decode"
+      label="Encoded"
+      placeholder={encoded}
+    />
+    <Field
+      client:idle
+      id="decode"
+      target="encode"
+      label="Decoded"
+      placeholder={decoded}
+    />
+  </div>
 </Layout>

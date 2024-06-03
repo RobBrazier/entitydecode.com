@@ -10,14 +10,14 @@ WORKDIR /app
 ENV NODE_ENV="production"
 
 # Install pnpm
-COPY --link package.json pnpm-lock.yaml ./
+COPY package.json pnpm-lock.yaml ./
 RUN corepack enable
 
 # Install node modules
 RUN pnpm install --frozen-lockfile --prod=false
 
 # Copy application code
-COPY --link . .
+COPY . .
 
 # Build application
 RUN pnpm run build

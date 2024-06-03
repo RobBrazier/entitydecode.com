@@ -1,5 +1,5 @@
 ---
-import About from "../components/About.astro";
+import About from "../components/About.svelte";
 ---
 
 <!doctype html>
@@ -12,19 +12,19 @@ import About from "../components/About.astro";
     />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>EntityDecode</title>
-    <script defer src="https://st.r0b.dev/script.js" data-website-id="9fce6c8c-d6fe-415d-bfcb-b33a390229c0" data-domains="entitydecode.com"></script>
-    <style is:global>
-      [x-cloak] {
-        display: none !important;
-      }
-    </style>
+    <script
+      is:inline
+      defer
+      src="https://st.r0b.dev/script.js"
+      data-website-id="9fce6c8c-d6fe-415d-bfcb-b33a390229c0"
+      data-domains="entitydecode.com"></script>
   </head>
   <body class="flex flex-col w-full max-w-screen-xl m-auto gap-4 p-4">
-    <header x-data="{ open: false }" class="space-y-4">
+    <header class="space-y-4 flex flex-col gap-4">
       <h1 class="text-4xl font-bold text-center">
         Entity<span class="font-light">Decode</span>
       </h1>
-      <About />
+      <About client:idle />
     </header>
     <main>
       <slot />
