@@ -1,0 +1,56 @@
+name: Bunny Deploy
+on:
+  push:
+    branches:
+      - main
+jobs:
+  deploy:
+    name: Deploy app
+    runs-on: ubuntu-latest
+    concurrency: bunny-group # optional: ensure only one action runs at a time
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+        name: Install pnpm
+        with:
+          version: 8
+          run_install: false
+
+      - name: Install Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: "pnpm"
+
+      - name: Get pnpm store directory
+        shell: bash
+        run: |
+          echo "STORE_PATH=$(pnpm store path --silent)" >> $GITHUB_ENV
+
+      - uses: actions/cache@v4
+        name: Setup pnpm cache
+        with:
+          path: ${{ env.STORE_PATH }}
+          key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
+          restore-keys: |
+            ${{ runner.os }}-pnpm-store-
+
+      - name: Install dependencies
+        run: pnpm install
+
+      - name: Build Site
+        run: pnpm run build
+
+      - name: Configure Error Pages
+        run: cd public && mkdir -p bunnycdn_errors && mv 404.html bunnycdn_errors/
+
+      - name: Deploy to Edge Storage
+        uses: own3d/bunny-action@main
+        env:
+          BUNNY_API_ACCESS_KEY: ${{ secrets.BUNNY_API_ACCESS_KEY }}
+          BUNNY_STORAGE_USERNAME: entitydecode
+          BUNNY_STORAGE_PASSWORD: ${{ secrets.BUNNY_STORAGE_PASSWORD }}
+          # BUNNY_STORAGE_PATH: some_target_edge_dir (optional)
+          BUNNY_PULL_ZONE_ID: ${{ secrets.BUNNY_PULL_ZONE_ID }}
+        with:
+          args: deploy --dir=dist
