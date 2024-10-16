@@ -1,7 +1,4 @@
-# syntax = docker/dockerfile:1
 FROM docker.io/node:lts-alpine as build
-
-LABEL fly_launch_runtime="Astro"
 
 # Astro app lives here
 WORKDIR /app
@@ -25,9 +22,7 @@ RUN pnpm run build
 # Remove development dependencies
 RUN pnpm prune --prod
 
-RUN echo "E404:404.html" > dist/httpd.conf
-
 # Final stage for app image
-FROM docker.io/lipanski/docker-static-website:2.3.1
+FROM docker.io/joseluisq/static-web-server:2
 
-COPY --from=build /app/dist .
+COPY --from=build /app/dist /public
