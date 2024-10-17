@@ -73,7 +73,7 @@ jobs:
       - name: Push Docker image
         if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
         run: |
-          docker push ${{ steps.meta.outputs.tags }}
+          echo "${{ steps.meta.outputs.tags }}" | xargs -n 1 docker push
 
   deploy:
     needs: build
