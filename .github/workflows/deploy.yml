@@ -22,15 +22,23 @@ jobs:
         run: |
           echo "REPO_LOWER=$(echo ${{ github.repository }} | tr '[:upper:]' '[:lower:]')" >> $GITHUB_ENV
 
+      - name: Set Docker metadata
+        id: meta
+        uses: docker/metadata-action@v3
+        with:
+          images: ghcr.io/${{ env.REPO_LOWER }}
+          tags: |
+            type=sha
+            type=ref,event=branch
+            type=ref,event=pr,prefix=pr-
+
       - name: Build Docker image
         uses: docker/build-push-action@v6
         with:
           context: .
           push: false
           load: true
-          tags: |
-            ghcr.io/${{ env.REPO_LOWER }}:${{ github.sha }}
-            ghcr.io/${{ env.REPO_LOWER }}:${{ github.ref_name }}
+          tags: ${{ steps.meta.outputs.tags }}
 
       - name: Login to GitHub Container Registry
         if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
@@ -43,8 +51,7 @@ jobs:
       - name: Push Docker image
         if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
         run: |
-          docker push ghcr.io/${{ env.REPO_LOWER }}:${{ github.sha }}
-          docker push ghcr.io/${{ env.REPO_LOWER }}:${{ github.ref_name }}
+          docker push ${{ steps.meta.outputs.tags }}
 
   deploy:
     needs: build
