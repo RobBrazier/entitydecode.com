@@ -30,6 +30,8 @@ jobs:
     concurrency:
       group: ${{ github.workflow }}-${{ github.ref }}
       cancel-in-progress: ${{ github.event_name == 'pull_request' }}
+    outputs:
+      repo_lower: ${{ steps.lowercase.outputs.repo_lower }}
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -38,6 +40,7 @@ jobs:
         uses: docker/setup-buildx-action@v3
 
       - name: Lowercase the repo name
+        id: lowercase
         run: |
           echo "REPO_LOWER=$(echo ${{ github.repository }} | tr '[:upper:]' '[:lower:]')" >> $GITHUB_ENV
 
@@ -76,6 +79,8 @@ jobs:
     needs: build
     if: github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
+    env:
+      REPO_LOWER: ${{ needs.build.outputs.repo_lower }}
     steps:
       - name: Deploy to Dokku
         uses: dokku/github-action@v1
