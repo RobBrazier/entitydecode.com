@@ -1,4 +1,4 @@
-FROM docker.io/node:lts-alpine as build
+FROM docker.io/node:lts-alpine AS build
 
 # Astro app lives here
 WORKDIR /app
