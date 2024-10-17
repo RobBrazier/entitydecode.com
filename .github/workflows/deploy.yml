@@ -9,8 +9,27 @@ on:
       - "*"
 
 jobs:
-  build:
+  check_pr:
     runs-on: ubuntu-latest
+    outputs:
+      has_pr: ${{ steps.check_pr.outputs.has_pr }}
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      - name: Check if PR exists
+        id: check_pr
+        run: |
+          PR_COUNT=$(gh pr list --head ${{ github.ref_name }} --json number --jq length)
+          echo "has_pr=$([[ $PR_COUNT -gt 0 ]] && echo 'true' || echo 'false')" >> $GITHUB_OUTPUT
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+  build:
+    needs: check_pr
+    if: ${{ needs.check_pr.outputs.has_pr == 'false' || github.event_name == 'pull_request' }}
+    runs-on: ubuntu-latest
+    concurrency:
+      group: ${{ github.workflow }}-${{ github.ref }}
+      cancel-in-progress: ${{ github.event_name == 'pull_request' }}
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -22,15 +41,23 @@ jobs:
         run: |
           echo "REPO_LOWER=$(echo ${{ github.repository }} | tr '[:upper:]' '[:lower:]')" >> $GITHUB_ENV
 
+      - name: Set Docker metadata
+        id: meta
+        uses: docker/metadata-action@v5
+        with:
+          images: ghcr.io/${{ env.REPO_LOWER }}
+          tags: |
+            type=sha
+            type=ref,event=branch
+            type=ref,event=pr,prefix=pr-
+
       - name: Build Docker image
         uses: docker/build-push-action@v6
         with:
           context: .
           push: false
           load: true
-          tags: |
-            ghcr.io/${{ env.REPO_LOWER }}:${{ github.sha }}
-            ghcr.io/${{ env.REPO_LOWER }}:${{ github.ref_name }}
+          tags: ${{ steps.meta.outputs.tags }}
 
       - name: Login to GitHub Container Registry
         if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
@@ -43,8 +70,7 @@ jobs:
       - name: Push Docker image
         if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
         run: |
-          docker push ghcr.io/${{ env.REPO_LOWER }}:${{ github.sha }}
-          docker push ghcr.io/${{ env.REPO_LOWER }}:${{ github.ref_name }}
+          docker push ${{ steps.meta.outputs.tags }}
 
   deploy:
     needs: build
