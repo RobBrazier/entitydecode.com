@@ -14,6 +14,8 @@ jobs:
     outputs:
       has_pr: ${{ steps.check_pr.outputs.has_pr }}
     steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
       - name: Check if PR exists
         id: check_pr
         run: |
