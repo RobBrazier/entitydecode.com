@@ -9,8 +9,25 @@ on:
       - "*"
 
 jobs:
-  build:
+  check_pr:
     runs-on: ubuntu-latest
+    outputs:
+      has_pr: ${{ steps.check_pr.outputs.has_pr }}
+    steps:
+      - name: Check if PR exists
+        id: check_pr
+        run: |
+          PR_COUNT=$(gh pr list --head ${{ github.ref_name }} --json number --jq length)
+          echo "has_pr=$([[ $PR_COUNT -gt 0 ]] && echo 'true' || echo 'false')" >> $GITHUB_OUTPUT
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+  build:
+    needs: check_pr
+    if: ${{ needs.check_pr.outputs.has_pr == 'false' || github.event_name == 'pull_request' }}
+    runs-on: ubuntu-latest
+    concurrency:
+      group: ${{ github.workflow }}-${{ github.ref }}
+      cancel-in-progress: ${{ github.event_name == 'pull_request' }}
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
