@@ -10,7 +10,7 @@ importers:
     dependencies:
       '@astrojs/svelte':
         specifier: ^7.0.0
-        version: 7.0.3(astro@5.1.5(jiti@1.21.7)(rollup@4.30.1)(typescript@5.7.3)(yaml@2.6.1))(jiti@1.21.7)(svelte@5.16.6)(typescript@5.7.3)(yaml@2.6.1)
+        version: 7.0.3(astro@5.1.5(jiti@1.21.7)(rollup@4.30.1)(typescript@5.7.3)(yaml@2.6.1))(jiti@1.21.7)(svelte@5.17.3)(typescript@5.7.3)(yaml@2.6.1)
       '@astrojs/tailwind':
         specifier: ^5.1.2
         version: 5.1.4(astro@5.1.5(jiti@1.21.7)(rollup@4.30.1)(typescript@5.7.3)(yaml@2.6.1))(tailwindcss@3.4.17)
@@ -28,7 +28,7 @@ importers:
         version: 1.2.0
       svelte:
         specifier: ^5.0.0
-        version: 5.16.6
+        version: 5.17.3
       tailwindcss:
         specifier: ^3.4.14
         version: 3.4.17
@@ -1781,8 +1781,8 @@ packages:
       svelte: ^3.55 || ^4.0.0-next.0 || ^4.0 || ^5.0.0-next.0
       typescript: ^4.9.4 || ^5.0.0
 
-  svelte@5.16.6:
-    resolution: {integrity: sha512-NTEpGul7oeb/46mUJNSKfosQ4ptEIuHaTkFPyayjMXA3KCgox3/wtIY7HyB1Q7zy6O1t7QdZ69OzPdSRH9W53w==}
+  svelte@5.17.3:
+    resolution: {integrity: sha512-eLgtpR2JiTgeuNQRCDcLx35Z7Lu9Qe09GPOz+gvtR9nmIZu5xgFd6oFiLGQlxLD0/u7xVyF5AUkjDVyFHe6Bvw==}
     engines: {node: '>=18'}
 
   tailwindcss@3.4.17:
@@ -2119,12 +2119,12 @@ snapshots:
     dependencies:
       prismjs: 1.29.0
 
-  '@astrojs/svelte@7.0.3(astro@5.1.5(jiti@1.21.7)(rollup@4.30.1)(typescript@5.7.3)(yaml@2.6.1))(jiti@1.21.7)(svelte@5.16.6)(typescript@5.7.3)(yaml@2.6.1)':
+  '@astrojs/svelte@7.0.3(astro@5.1.5(jiti@1.21.7)(rollup@4.30.1)(typescript@5.7.3)(yaml@2.6.1))(jiti@1.21.7)(svelte@5.17.3)(typescript@5.7.3)(yaml@2.6.1)':
     dependencies:
-      '@sveltejs/vite-plugin-svelte': 5.0.3(svelte@5.16.6)(vite@6.0.7(jiti@1.21.7)(yaml@2.6.1))
+      '@sveltejs/vite-plugin-svelte': 5.0.3(svelte@5.17.3)(vite@6.0.7(jiti@1.21.7)(yaml@2.6.1))
       astro: 5.1.5(jiti@1.21.7)(rollup@4.30.1)(typescript@5.7.3)(yaml@2.6.1)
-      svelte: 5.16.6
-      svelte2tsx: 0.7.31(svelte@5.16.6)(typescript@5.7.3)
+      svelte: 5.17.3
+      svelte2tsx: 0.7.31(svelte@5.17.3)(typescript@5.7.3)
       typescript: 5.7.3
       vite: 6.0.7(jiti@1.21.7)(yaml@2.6.1)
     transitivePeerDependencies:
@@ -2543,23 +2543,23 @@ snapshots:
 
   '@shikijs/vscode-textmate@10.0.1': {}
 
-  '@sveltejs/vite-plugin-svelte-inspector@4.0.1(@sveltejs/vite-plugin-svelte@5.0.3(svelte@5.16.6)(vite@6.0.7(jiti@1.21.7)(yaml@2.6.1)))(svelte@5.16.6)(vite@6.0.7(jiti@1.21.7)(yaml@2.6.1))':
+  '@sveltejs/vite-plugin-svelte-inspector@4.0.1(@sveltejs/vite-plugin-svelte@5.0.3(svelte@5.17.3)(vite@6.0.7(jiti@1.21.7)(yaml@2.6.1)))(svelte@5.17.3)(vite@6.0.7(jiti@1.21.7)(yaml@2.6.1))':
     dependencies:
-      '@sveltejs/vite-plugin-svelte': 5.0.3(svelte@5.16.6)(vite@6.0.7(jiti@1.21.7)(yaml@2.6.1))
+      '@sveltejs/vite-plugin-svelte': 5.0.3(svelte@5.17.3)(vite@6.0.7(jiti@1.21.7)(yaml@2.6.1))
       debug: 4.4.0
-      svelte: 5.16.6
+      svelte: 5.17.3
       vite: 6.0.7(jiti@1.21.7)(yaml@2.6.1)
     transitivePeerDependencies:
       - supports-color
 
-  '@sveltejs/vite-plugin-svelte@5.0.3(svelte@5.16.6)(vite@6.0.7(jiti@1.21.7)(yaml@2.6.1))':
+  '@sveltejs/vite-plugin-svelte@5.0.3(svelte@5.17.3)(vite@6.0.7(jiti@1.21.7)(yaml@2.6.1))':
     dependencies:
-      '@sveltejs/vite-plugin-svelte-inspector': 4.0.1(@sveltejs/vite-plugin-svelte@5.0.3(svelte@5.16.6)(vite@6.0.7(jiti@1.21.7)(yaml@2.6.1)))(svelte@5.16.6)(vite@6.0.7(jiti@1.21.7)(yaml@2.6.1))
+      '@sveltejs/vite-plugin-svelte-inspector': 4.0.1(@sveltejs/vite-plugin-svelte@5.0.3(svelte@5.17.3)(vite@6.0.7(jiti@1.21.7)(yaml@2.6.1)))(svelte@5.17.3)(vite@6.0.7(jiti@1.21.7)(yaml@2.6.1))
       debug: 4.4.0
       deepmerge: 4.3.1
       kleur: 4.1.5
       magic-string: 0.30.17
-      svelte: 5.16.6
+      svelte: 5.17.3
       vite: 6.0.7(jiti@1.21.7)(yaml@2.6.1)
       vitefu: 1.0.5(vite@6.0.7(jiti@1.21.7)(yaml@2.6.1))
     transitivePeerDependencies:
@@ -4058,14 +4058,14 @@ snapshots:
 
   supports-preserve-symlinks-flag@1.0.0: {}
 
-  svelte2tsx@0.7.31(svelte@5.16.6)(typescript@5.7.3):
+  svelte2tsx@0.7.31(svelte@5.17.3)(typescript@5.7.3):
     dependencies:
       dedent-js: 1.0.1
       pascal-case: 3.1.2
-      svelte: 5.16.6
+      svelte: 5.17.3
       typescript: 5.7.3
 
-  svelte@5.16.6:
+  svelte@5.17.3:
     dependencies:
       '@ampproject/remapping': 2.3.0
       '@jridgewell/sourcemap-codec': 1.5.0
