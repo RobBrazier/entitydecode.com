@@ -22,10 +22,5 @@ bun dev
 I may do the occasional rewrite of this app as a test for other technologies, but remain the same functionality.
 
 It's essentially feature complete for what I have intended to write, so just 'maintenance mode' - responding to dependabot constantly pinging me about dependencies needing to be updated.
-## Deployment
 
-This project is deployed via Docker (Dockerfile in the root of the repo)
-
-This can also be deployed anywhere as a static site (e.g. Vercel, Netlify) by using the standard Astro preset.
-
-**DISCLAIMER** No support is provided for other deployments - this is intended as a small tool that I have deployed for my use.
+**DISCLAIMER** No support is provided - this is a toy project
