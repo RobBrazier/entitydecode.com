@@ -1,5 +1,5 @@
 ---
-import About from "../components/About.svelte";
+import About from "../components/About.jsx";
 ---
 
 <!doctype html>
@@ -18,9 +18,14 @@ import About from "../components/About.svelte";
       data-domains="www.entitydecode.com,entitydecode.com"
       data-website-id="98d9853f-3e93-4d68-a623-c47a4df85e0a"
       src="https://psychic-couscous.b-cdn.net/script.js"></script>
+    <style>
+      [x-cloak] {
+        display: none !important;
+      }
+    </style>
   </head>
   <body class="flex flex-col w-full max-w-screen-xl m-auto gap-4 p-4">
-    <header class="space-y-4 flex flex-col gap-4">
+    <header class="space-y-4 flex flex-col gap-4" x-data="{open: false}">
       <h1 class="text-4xl font-bold text-center">
         Entity<span class="font-light">Decode</span>
       </h1>
