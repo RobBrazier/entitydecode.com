@@ -30,7 +30,7 @@ jobs:
     needs: build
     if: github.ref == 'refs/heads/main'
     steps:
-      - uses: actions/download-artifact@v4.1.8
+      - uses: actions/download-artifact@cc203385981b70ca67e1cc392babf9cc229d5806 # v4.1.9
         with:
           name: dist
           path: dist
