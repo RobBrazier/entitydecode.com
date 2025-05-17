@@ -34,7 +34,7 @@ jobs:
         with:
           name: dist
           path: dist
-      - uses: ayeressian/bunnycdn-storage-deploy@v2.2.5
+      - uses: ayeressian/bunnycdn-storage-deploy@74f4ef4922470087621a4d134f7960b74492e8fc # v2.3.0
         with:
           source: "dist"
           storageZoneName: "${{ secrets.BUNNY_STORAGE }}"
