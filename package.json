@@ -10,21 +10,21 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/solid-js": "^5.0.4",
+    "@astrojs/solid-js": "^5.1.0",
     "@astrojs/tailwind": "^5.1.5",
     "@nanostores/solid": "^0.5.0",
     "@types/he": "^1.2.3",
-    "astro": "^5.2.5",
-    "daisyui": "^4.12.23",
+    "astro": "^5.11.1",
+    "daisyui": "^4.12.24",
     "he": "^1.2.0",
-    "nanostores": "^0.11.3",
-    "solid-js": "^1.9.4",
+    "nanostores": "^0.11.4",
+    "solid-js": "^1.9.7",
     "tailwindcss": "^3.4.17",
-    "typescript": "^5.7.3",
+    "typescript": "^5.8.3",
     "wrangler": "^4.24.3"
   },
   "devDependencies": {
-    "prettier": "^3.4.2",
+    "prettier": "^3.6.2",
     "prettier-plugin-astro": "^0.14.1"
   }
 }
