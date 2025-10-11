@@ -21,6 +21,6 @@ bun dev
 
 I may do the occasional rewrite of this app as a test for other technologies, but remain the same functionality.
 
-It's essentially feature complete for what I have intended to write, so just 'maintenance mode' - responding to dependabot constantly pinging me about dependencies needing to be updated.
+It's essentially feature complete for what I have intended to write, so just 'maintenance mode' - responding to dependabot/renovate constantly pinging me about dependencies needing to be updated.
 
 **DISCLAIMER** No support is provided - this is a toy project
