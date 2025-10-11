@@ -6,16 +6,16 @@ export default function Options() {
 	const $urlDecode = useStore(urlDecode);
 	return (
 		<div id="options" class="flex flex-row justify-center gap-8">
-			<label>
-				<input type="checkbox" checked={$htmlEncode()} onClick={() => htmlEncode.set(!$htmlEncode())} />&nbsp;HTML Entity
+			<label class="label">
+				<input class="checkbox checkbox-sm" type="checkbox" checked={$htmlEncode()} onClick={() => htmlEncode.set(!$htmlEncode())} />&nbsp;HTML Entity
 				Encode/Decode
 			</label>
 			<label
-				class="tooltip"
+				class="tooltip label"
 				data-tip="Currently only Decoding is supported as Encoding causes too many problems"
 				aria-label="Currently only Decoding is supported as Encoding causes too many problems"
 			>
-				<input type="checkbox" checked={$urlDecode()} onClick={() => urlDecode.set(!$urlDecode())} />&nbsp;URL Encoding Decode
+				<input class="checkbox checkbox-sm" type="checkbox" checked={$urlDecode()} onClick={() => urlDecode.set(!$urlDecode())} />&nbsp;URL Encoding Decode
 				(?)
 			</label>
 		</div>
