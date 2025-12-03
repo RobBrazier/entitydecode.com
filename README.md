@@ -3,7 +3,6 @@
 A fully client-side tool to encode and decode HTML Entities from text (e.g.
 `&raquo;` → `»`) and decode URL components (e.g. `%23` → `#`)
 
-![Codacy grade](https://img.shields.io/codacy/grade/a003cbb1e93148e8bd7ef0cfc0243ce0)
 ![GitHub License](https://img.shields.io/github/license/RobBrazier/entitydecode.com)
 [![Built with Astro](https://astro.badg.es/v2/built-with-astro/tiny.svg)](https://astro.build)
 
