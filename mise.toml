@@ -1,2 +1,6 @@
 [tools]
-bun = "latest"
+deno = "latest"
+lefthook = "latest"
+
+[hooks]
+postinstall = "deno install && lefthook install"

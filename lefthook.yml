@@ -1,0 +1,13 @@
+pre-commit:
+  parallel: true
+  jobs:
+    - run: deno lint
+      glob: "*.{js,ts,jsx,tsx}"
+
+    - run: deno fmt
+      stage_fixed: true
+      glob: "*.{js,ts,jsx,tsx}"
+
+output:
+  - success
+  - summary

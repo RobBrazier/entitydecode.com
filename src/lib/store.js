@@ -5,6 +5,6 @@ export const urlDecode = atom(true);
 
 export const focused = atom("");
 export const value = map({
-	encode: "",
-	decode: "",
+  encode: "",
+  decode: "",
 });
