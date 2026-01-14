@@ -6,27 +6,27 @@ export default function Options() {
   const $urlDecode = useStore(urlDecode);
   return (
     <div id="options" class="flex flex-row justify-center gap-8">
-      <label class="label">
+      <label class="flex items-center gap-2 cursor-pointer">
         <input
-          class="checkbox checkbox-sm"
+          class="peer h-4 w-4 shrink-0 rounded-sm border border-input ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 data-[state=checked]:bg-primary data-[state=checked]:text-primary-foreground"
           type="checkbox"
           checked={$htmlEncode()}
           onClick={() => htmlEncode.set(!$htmlEncode())}
         />
-        &nbsp;HTML Entity Encode/Decode
+        HTML Entity Encode/Decode
       </label>
       <label
-        class="tooltip label"
-        data-tip="Currently only Decoding is supported as Encoding causes too many problems"
+        class="flex items-center gap-2 cursor-pointer"
+        title="Currently only Decoding is supported as Encoding causes too many problems"
         aria-label="Currently only Decoding is supported as Encoding causes too many problems"
       >
         <input
-          class="checkbox checkbox-sm"
+          class="peer h-4 w-4 shrink-0 rounded-sm border border-input ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 data-[state=checked]:bg-primary data-[state=checked]:text-primary-foreground"
           type="checkbox"
           checked={$urlDecode()}
           onClick={() => urlDecode.set(!$urlDecode())}
         />
-        &nbsp;URL Encoding Decode (?)
+        URL Encoding Decode (?)
       </label>
     </div>
   );

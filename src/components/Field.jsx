@@ -73,10 +73,10 @@ export default function Field(props) {
   });
 
   return (
-    <label for={id} class="form-control w-full py-2 flex flex-col gap-2">
-      <div class="label font-bold">{label}:</div>
+    <label for={id} class="w-full py-2 flex flex-col gap-2">
+      <div class="font-bold">{label}:</div>
       <textarea
-        class="textarea w-full min-h-52"
+        class="flex min-h-[13rem] w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
         id={id}
         placeholder={placeholder}
         onFocus={() => focused.set(id)}

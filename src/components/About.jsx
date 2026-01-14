@@ -6,7 +6,7 @@ export default function About() {
     <>
       <button
         type="button"
-        class="btn btn-ghost mx-auto block"
+        class="inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 px-4 py-2 mx-auto block cursor-pointer"
         onClick={() => setOpen((v) => !v)}
       >
         About
@@ -23,7 +23,10 @@ export default function About() {
         <p>
           You can use this to decode any HTML Entities, or URL Encodings, and
           make them more readable, by pasting/typing it into the{" "}
-          <label for="encode" class="label inline link">
+          <label
+            for="encode"
+            class="inline cursor-pointer text-primary hover:underline font-medium"
+          >
             Encoded
           </label>{" "}
           Textbox.
@@ -31,7 +34,10 @@ export default function About() {
         <p>
           It also works the other way, you can paste/type anything you want to
           convert into an HTML Entity into the{" "}
-          <label for="decode" class="label inline link">
+          <label
+            for="decode"
+            class="inline cursor-pointer text-primary hover:underline font-medium"
+          >
             Decoded
           </label>{" "}
           Textbox.
@@ -40,7 +46,7 @@ export default function About() {
           If you have no idea what I'm on about, with{" "}
           <a
             target="_blank"
-            class="link link-primary"
+            class="text-primary hover:underline font-medium"
             href="https://en.wikipedia.org/wiki/Character_encodings_in_HTML#Character_references"
             rel="noopener"
           >
@@ -49,7 +55,7 @@ export default function About() {
           and{" "}
           <a
             target="_blank"
-            class="link link-primary"
+            class="text-primary hover:underline font-medium"
             href="https://en.wikipedia.org/wiki/Percent-encoding"
             rel="noopener"
           >
