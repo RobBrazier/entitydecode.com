@@ -18,5 +18,5 @@ steps:
       BUNNY_API_KEY:
         from_secret: BUNNY_API_KEY
     commands:
-      - uvx trifold publish
+      - uvx trifold publish --delete
       - uvx trifold redirects
