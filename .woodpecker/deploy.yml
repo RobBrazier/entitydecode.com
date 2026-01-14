@@ -1,0 +1,22 @@
+when:
+  - branch: main
+    event: push
+
+steps:
+  - name: build
+    image: denoland/deno:latest
+    when:
+      - event: push
+    commands:
+      - deno install
+      - deno run build
+  - name: deploy
+    image: ghcr.io/astral-sh/uv:python3.12-alpine
+    when:
+      - event: push
+    environment:
+      BUNNY_API_KEY:
+        from_secret: BUNNY_API_KEY
+    commands:
+      - uvx trifold publish
+      - uvx trifold redirects

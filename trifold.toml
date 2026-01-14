@@ -1,0 +1,12 @@
+provider = "bunny"
+remote_path = ""
+local_path = "dist"
+ignore = []
+remote_ignore = []
+
+[bunny]
+storage_zone = "entitydecode-com"
+
+[[redirects]]
+from = "*://www.entitydecode.com/*"
+to = "https://entitydecode.com%{Url.Path}"
